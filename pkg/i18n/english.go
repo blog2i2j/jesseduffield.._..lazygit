@@ -369,6 +369,7 @@ type TranslationSet struct {
 	RewordNotSupported                    string
 	ChangingThisActionIsNotAllowed        string
 	NotAllowedMidCherryPickOrRevert       string
+	PickIsOnlyAllowedDuringRebase         string
 	DroppingMergeRequiresSingleSelection  string
 	CherryPickCopy                        string
 	CherryPickCopyTooltip                 string
@@ -1459,6 +1460,7 @@ func EnglishTranslationSet() *TranslationSet {
 		RewordNotSupported:                   "Rewording commits while interactively rebasing is not currently supported",
 		ChangingThisActionIsNotAllowed:       "Changing this kind of rebase todo entry is not allowed",
 		NotAllowedMidCherryPickOrRevert:      "This action is not allowed while cherry-picking or reverting",
+		PickIsOnlyAllowedDuringRebase:        "This action is only allowed while rebasing",
 		DroppingMergeRequiresSingleSelection: "Dropping a merge commit requires a single selected item",
 		CherryPickCopy:                       "Copy (cherry-pick)",
 		CherryPickCopyTooltip:                "Mark commit as copied. Then, within the local commits view, you can press `{{.paste}}` to paste (cherry-pick) the copied commit(s) into your checked out branch. At any time you can press `{{.escape}}` to cancel the selection.",
@@ -1529,7 +1531,7 @@ func EnglishTranslationSet() *TranslationSet {
 		DiscardFileChangesTitle:              "Discard file changes",
 		DiscardFileChangesPrompt:             "Are you sure you want to remove changes to the selected file(s) from this commit?\n\nThis action will start a rebase, reverting these file changes. Be aware that if subsequent commits depend on these changes, you may need to resolve conflicts.\nNote: This will also reset any active custom patches.",
 		DisabledForGPG:                       "Feature not available for users using GPG.\n\nIf you are using a passphrase agent (e.g. gpg-agent) so that you don't have to type your passphrase when signing, you can enable this feature by adding\n\ngit:\n  overrideGpg: true\n\nto your lazygit config file.",
-		CreateRepo:                           "Not in a git repository. Create a new git repository? (y/n): ",
+		CreateRepo:                           "Not in a git repository. Create a new git repository? (y/N): ",
 		BareRepo:                             "You've attempted to open Lazygit in a bare repo but Lazygit does not yet support bare repos. Open most recent repo? (y/n) ",
 		InitialBranch:                        "Branch name? (leave empty for git's default): ",
 		NoRecentRepositories:                 "Must open lazygit in a git repository. No valid recent repositories. Exiting.",
